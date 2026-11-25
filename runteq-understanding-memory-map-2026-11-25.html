@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プログラミング学習の「理解と記憶」全体相関マップ</title>
+<style>
+  :root{
+    --bg:#f7f4ee; --card:#ffffff; --ink:#2b2620; --muted:#6f675c;
+    --accent:#c96f2e; --accent2:#3e7d5b; --accent3:#43618f;
+    --line:#ddd3c4; --slot:#efe8db;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#1d1a16; --card:#292520; --ink:#ece5d8; --muted:#a89d8c;
+      --line:#4a4238; --slot:#38322b; }
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; padding:32px 16px 56px; background:var(--bg); color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+    line-height:1.7;
+  }
+  .wrap{ max-width:860px; margin:0 auto; }
+  h1{ font-size:1.45rem; margin:0 0 6px; letter-spacing:.02em; }
+  .sub{ color:var(--muted); margin:0 0 26px; font-size:.95rem; }
+  h2{ font-size:1.12rem; margin:34px 0 12px; padding-left:10px; border-left:5px solid var(--accent); }
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:20px 22px; margin:14px 0;
+  }
+  .diagram{ text-align:center; padding:10px 6px 2px; }
+  .diagram svg{ max-width:100%; height:auto; }
+  .trio{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  @media (max-width:640px){ .trio{ grid-template-columns:1fr; } }
+  .trio .card{ margin:0; }
+  .trio h3{ margin:0 0 6px; font-size:1.02rem; }
+  .trio p{ margin:0; font-size:.92rem; color:var(--muted); }
+  .tag{
+    display:inline-block; font-size:.75rem; font-weight:700; color:#fff;
+    border-radius:999px; padding:2px 10px; margin-bottom:8px;
+  }
+  .tag.memory{ background:var(--accent3); }
+  .tag.understand{ background:var(--accent); }
+  .tag.hands{ background:var(--accent2); }
+  .desk{ display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 4px; }
+  .slot{
+    min-width:52px; height:40px; padding:0 8px; border-radius:8px; background:var(--slot);
+    border:1px dashed var(--muted); display:flex; align-items:center; justify-content:center;
+    font-size:.8rem; text-align:center;
+  }
+  .slot.chunk{ background:var(--accent2); border:1px solid var(--accent2); color:#fff; font-weight:700; }
+  .slot.free{ border-style:solid; border-color:var(--line); color:var(--muted); }
+  .desk-label{ font-size:.85rem; color:var(--muted); margin:12px 0 2px; font-weight:700; }
+  ol.checks{ margin:6px 0 0; padding-left:1.4em; }
+  ol.checks li{ margin:6px 0; }
+  .note{ font-size:.9rem; color:var(--muted); }
+  .vs{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media (max-width:640px){ .vs{ grid-template-columns:1fr; } }
+  .vs .card{ margin:0; }
+  .vs h3{ margin:0 0 6px; font-size:1rem; }
+  .vs p{ margin:0; font-size:.92rem; }
+  .bad{ color:#b0402e; font-weight:700; }
+  .good{ color:var(--accent2); font-weight:700; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>プログラミング学習の「理解と記憶」全体相関マップ</h1>
+<p class="sub">ニワトリと卵ではなく「らせん階段」。記憶・予測・手を動かす・ズレ・整理・定着が、1周ごとに一段ずつ理解を押し上げる。</p>
+
+<div class="card diagram">
+<svg viewBox="0 0 680 640" role="img" aria-label="理解と記憶のらせん循環図">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c96f2e"></path>
+    </marker>
+  </defs>
+
+  <circle cx="340" cy="320" r="225" fill="none" stroke="#ddd3c4" stroke-width="2" stroke-dasharray="5 7"></circle>
+
+  <g fill="none" stroke="#c96f2e" stroke-width="3">
+    <path d="M 387 100 A 225 225 0 0 1 507 169" marker-end="url(#arrow)"></path>
+    <path d="M 387 100 A 225 225 0 0 1 507 169" marker-end="url(#arrow)" transform="rotate(60 340 320)"></path>
+    <path d="M 387 100 A 225 225 0 0 1 507 169" marker-end="url(#arrow)" transform="rotate(120 340 320)"></path>
+    <path d="M 387 100 A 225 225 0 0 1 507 169" marker-end="url(#arrow)" transform="rotate(180 340 320)"></path>
+    <path d="M 387 100 A 225 225 0 0 1 507 169" marker-end="url(#arrow)" transform="rotate(240 340 320)"></path>
+    <path d="M 387 100 A 225 225 0 0 1 507 169" marker-end="url(#arrow)" transform="rotate(300 340 320)"></path>
+  </g>
+
+  <circle cx="340" cy="320" r="92" fill="#c96f2e" opacity="0.12"></circle>
+  <text x="340" y="302" text-anchor="middle" font-size="30" font-weight="700" fill="#c96f2e">理解</text>
+  <text x="340" y="332" text-anchor="middle" font-size="13.5" fill="#6f675c">＝ この回転そのものが</text>
+  <text x="340" y="354" text-anchor="middle" font-size="13.5" fill="#6f675c">育っていくこと</text>
+
+  <g font-size="15" font-weight="700">
+    <rect x="255" y="63" width="170" height="64" rx="12" fill="#43618f"></rect>
+    <text x="340" y="90" text-anchor="middle" fill="#ffffff">記憶（種）</text>
+    <text x="340" y="112" text-anchor="middle" fill="#dbe4f2" font-size="12" font-weight="400">索引と型が倉庫にある</text>
+    <rect x="450" y="176" width="170" height="64" rx="12" fill="#8a6d3b"></rect>
+    <text x="535" y="203" text-anchor="middle" fill="#ffffff">予測する</text>
+    <text x="535" y="225" text-anchor="middle" fill="#f0e6d2" font-size="12" font-weight="400">動かす前に「こうなるはず」</text>
+    <rect x="450" y="400" width="170" height="64" rx="12" fill="#3e7d5b"></rect>
+    <text x="535" y="427" text-anchor="middle" fill="#ffffff">手を動かす</text>
+    <text x="535" y="449" text-anchor="middle" fill="#d9ecdf" font-size="12" font-weight="400">打って、実行して、見る</text>
+    <rect x="255" y="513" width="170" height="64" rx="12" fill="#b0402e"></rect>
+    <text x="340" y="540" text-anchor="middle" fill="#ffffff">ズレに出会う</text>
+    <text x="340" y="562" text-anchor="middle" fill="#f6dcd6" font-size="12" font-weight="400">エラー・違和感が「通知」</text>
+    <rect x="60" y="400" width="170" height="64" rx="12" fill="#7a5ba6"></rect>
+    <text x="145" y="427" text-anchor="middle" fill="#ffffff">整理する</text>
+    <text x="145" y="449" text-anchor="middle" fill="#e7ddf4" font-size="12" font-weight="400">言い換え・ノートに残す</text>
+    <rect x="60" y="176" width="170" height="64" rx="12" fill="#43618f"></rect>
+    <text x="145" y="203" text-anchor="middle" fill="#ffffff">型として定着</text>
+    <text x="145" y="225" text-anchor="middle" fill="#dbe4f2" font-size="12" font-weight="400">倉庫の「型の棚」に収まる</text>
+  </g>
+
+  <g>
+    <path d="M 600 600 h 44 M 636 592 l 10 8 l -10 8" fill="none" stroke="#c96f2e" stroke-width="3"></path>
+    <text x="646" y="586" text-anchor="end" font-size="13" fill="#6f675c">1周ごとに一段上がる ＝ らせん階段</text>
+  </g>
+</svg>
+<p class="note">出発点はどこでもいい。回転が止まらなければ、理解は後からついてくる。止まるのは「読むだけ」のとき。</p>
+</div>
+
+<h2>3要素の関係：倉庫・地図・運転</h2>
+<div class="trio">
+  <div class="card">
+    <span class="tag memory">記憶</span>
+    <h3>倉庫と索引カード</h3>
+    <p>覚えるのは「全部」ではない。索引（どこに何があるか）と、型（頻出の組み立てパターン）の2つだけ。細部は倉庫から取り出す＝調べればいい。</p>
+  </div>
+  <div class="card">
+    <span class="tag understand">理解</span>
+    <h3>地図を持ち、動きを予測できること</h3>
+    <p>「どこに情報があるか」は地図の索引の側。そこに「なぜそう動くか」と「値がどう動くか予測できる」側が加わって、初めて運転できる。</p>
+  </div>
+  <div class="card">
+    <span class="tag hands">手を動かす</span>
+    <h3>予測と現実の照合の場</h3>
+    <p>手を動かすのは作業ではなく検証。予測が当たれば型が強くなり、外れればズレが「どこを直すか」を教えてくれる。</p>
+  </div>
+</div>
+
+<h2>頭の作業台（ワーキングメモリ）は小さな机</h2>
+<div class="card">
+  <p style="margin-top:0">頭の中で同時に考えられるのは、机の上に置ける4つ前後だけ。だから「覚えていないと理解できない」のではなく、<strong>机が満杯だと考える余地がなくなる</strong>のが正体。</p>
+  <p class="desk-label">型ができる前：部品がバラバラに机を占領する</p>
+  <div class="desk">
+    <div class="slot">変数</div>
+    <div class="slot">繰り返し</div>
+    <div class="slot">条件分岐</div>
+    <div class="slot">メソッド</div>
+  </div>
+  <p class="note">机はいっぱい。これ以上は置けない＝新しいことを考える余地がない。</p>
+  <p class="desk-label">型ができると：部品の集まりが「型1つ」に圧縮される</p>
+  <div class="desk">
+    <div class="slot chunk">型（ひとまとめ）</div>
+    <div class="slot free">空き</div>
+    <div class="slot free">空き</div>
+    <div class="slot free">空き ＝ 考える余地</div>
+  </div>
+  <p class="note">型が自動化されるほど机が空き、空いた分だけ難しい問題を考えられる。これが「記憶が理解を助ける」の仕組み。</p>
+</div>
+
+<h2>経験値の正体：回数ではなくサイクル</h2>
+<div class="vs">
+  <div class="card">
+    <h3><span class="bad">効かない回数</span></h3>
+    <p>読むだけ（スラスラ読める＝分かった気分になる錯覚）。同じ問題の反復（その問題の暗記に寄っていく）。予測なしの実行（当たったか外れたか分からない）。</p>
+  </div>
+  <div class="card">
+    <h3><span class="good">効く1サイクル</span></h3>
+    <p>実行する前に「こうなるはず」と予測する → 手を動かす → ズレを確認する。この1周が経験値。少し変えた問題で予測が当たれば、型が転用できた証拠。</p>
+  </div>
+</div>
+
+<h2>「理解した」の判定3点セット</h2>
+<div class="card">
+  <ol class="checks">
+    <li><strong>自分の言葉で言い換えられる</strong>（テキストの文面ではなく、自分の比喩で説明できる）</li>
+    <li><strong>実行前にコードの動きを予測できる</strong>（値がどう動くか、頭の中で再生できる）</li>
+    <li><strong>少し変えた問題に応用できる</strong>（数字や条件を変えても組み立て直せる）</li>
+  </ol>
+  <p class="note">3つそろえば「理解した」。1つでも欠けたら、欠けた場所がらせんの次の1周の入口。</p>
+</div>
+
+<p class="note" style="margin-top:28px">学習ノート第5号「プログラミング学習における『理解』と『記憶』の相関」（2026-11-25）と対の図。</p>
+
+</div>
+</body>
+</html>
